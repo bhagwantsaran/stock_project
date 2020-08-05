@@ -22,10 +22,10 @@ public class UserController {
 		@Autowired
 		UserService userService;
 		
-		@RequestMapping(value="/user/{userName}",method = RequestMethod.GET)
-		public UserResponseEntity getUser(@PathVariable String userName) throws Exception
+		@RequestMapping(value="/user/get-user/{userName}&{userPassword}",method = RequestMethod.GET)
+		public UserResponseEntity getUser(@PathVariable String userName, @PathVariable String userPassword) throws Exception
 		{
-			return userService.getUser(userName);
+			return userService.getUser(userName,userPassword);
 		}
 		@RequestMapping(value="/user/save-user/",method = RequestMethod.POST)
 	    public UserResponseEntity createUser(@RequestBody UserRequestEntity userDetails)

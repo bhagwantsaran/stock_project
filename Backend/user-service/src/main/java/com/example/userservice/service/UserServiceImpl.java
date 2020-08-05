@@ -18,9 +18,9 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	UserRepository userRepository;
 	@Override
-	public UserResponseEntity getUser(String userName)
+	public UserResponseEntity getUser(String userName,String userPassword)
 	{	
-		UserEntity userEntity=userRepository.findByUserName(userName);
+		UserEntity userEntity=userRepository.findByUserNameAndPassword(userName,userPassword);
 		ModelMapper mapper=new ModelMapper();
 	    mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 	    return mapper.map(userEntity, UserResponseEntity.class);

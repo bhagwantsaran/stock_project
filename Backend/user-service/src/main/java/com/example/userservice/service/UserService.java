@@ -6,7 +6,7 @@ import com.example.userservice.shared.UserRequestEntity;
 import com.example.userservice.shared.UserResponseEntity;
 
 public interface UserService {
-	UserResponseEntity getUser(String userName);
+	UserResponseEntity getUser(String userName,String userPassword);
 
 	UserResponseEntity createUser(UserRequestEntity userDetails);
 

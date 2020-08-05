@@ -7,5 +7,6 @@ import com.example.userservice.model.UserEntity;
 
 @Repository
 public interface UserRepository extends CrudRepository<UserEntity,Integer> {
-	UserEntity findByUserName(String userName);		
+	UserEntity findByUserNameAndPassword(String userName,String userPassword);
+
 }
